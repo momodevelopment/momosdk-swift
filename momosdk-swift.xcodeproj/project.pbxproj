@@ -12,7 +12,6 @@
 		E953D9A320D1893F00C781C4 /* MoMoPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E953D99F20D1893E00C781C4 /* MoMoPayment.swift */; };
 		E953D9A420D1893F00C781C4 /* momo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E953D9A020D1893E00C781C4 /* momo@2x.png */; };
 		E953D9A520D1893F00C781C4 /* MoMoConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E953D9A120D1893F00C781C4 /* MoMoConfig.swift */; };
-		E953D9AB20D18B2400C781C4 /* SampleUsingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E953D9AA20D18B2400C781C4 /* SampleUsingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +22,6 @@
 		E953D99F20D1893E00C781C4 /* MoMoPayment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoMoPayment.swift; sourceTree = "<group>"; };
 		E953D9A020D1893E00C781C4 /* momo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "momo@2x.png"; sourceTree = "<group>"; };
 		E953D9A120D1893F00C781C4 /* MoMoConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoMoConfig.swift; sourceTree = "<group>"; };
-		E953D9AA20D18B2400C781C4 /* SampleUsingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleUsingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +54,6 @@
 		E953D99320D1842100C781C4 /* momosdk-swift */ = {
 			isa = PBXGroup;
 			children = (
-				E953D9AA20D18B2400C781C4 /* SampleUsingView.swift */,
 				E953D99E20D1893E00C781C4 /* momo.png */,
 				E953D9A020D1893E00C781C4 /* momo@2x.png */,
 				E953D9A120D1893F00C781C4 /* MoMoConfig.swift */,
@@ -85,6 +82,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E953D99920D1842100C781C4 /* Build configuration list for PBXNativeTarget "momosdk-swift" */;
 			buildPhases = (
+				BDFD5ADD919005B4086710C5 /* [CP] Check Pods Manifest.lock */,
 				E953D98C20D1842100C781C4 /* Sources */,
 				E953D98D20D1842100C781C4 /* Frameworks */,
 				E953D98E20D1842100C781C4 /* Headers */,
@@ -143,6 +141,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		BDFD5ADD919005B4086710C5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-momosdk-swift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E953D98C20D1842100C781C4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -150,7 +169,6 @@
 			files = (
 				E953D9A320D1893F00C781C4 /* MoMoPayment.swift in Sources */,
 				E953D9A520D1893F00C781C4 /* MoMoConfig.swift in Sources */,
-				E953D9AB20D18B2400C781C4 /* SampleUsingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

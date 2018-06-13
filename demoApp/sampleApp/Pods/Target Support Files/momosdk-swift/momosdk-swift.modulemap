@@ -1,0 +1,6 @@
+framework module momosdk_swift {
+  umbrella header "momosdk-swift-umbrella.h"
+
+  export *
+  module * { export * }
+}

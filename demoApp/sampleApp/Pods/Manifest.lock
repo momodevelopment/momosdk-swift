@@ -1,0 +1,24 @@
+PODS:
+  - momosdk-swift (1.0.0)
+
+DEPENDENCIES:
+  - momosdk-swift (from `https://github.com/momodevelopment/momosdk-swift.git`, branch `master`)
+
+EXTERNAL SOURCES:
+  momosdk-swift:
+    :branch: master
+    :git: https://github.com/momodevelopment/momosdk-swift.git
+    :submodules: true
+
+CHECKOUT OPTIONS:
+  momosdk-swift:
+    :commit: adb1bc2992cf0d6d485024d084e05bda79cc7c69
+    :git: https://github.com/momodevelopment/momosdk-swift.git
+    :submodules: true
+
+SPEC CHECKSUMS:
+  momosdk-swift: 15068f0916f92be48dd40435cb1f5acad6d6828b
+
+PODFILE CHECKSUM: 493f87f8e08413417bc85414ae3c84743c14ba6f
+
+COCOAPODS: 1.5.2

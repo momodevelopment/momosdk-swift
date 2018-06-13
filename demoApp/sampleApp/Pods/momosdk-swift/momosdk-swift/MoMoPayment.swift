@@ -18,7 +18,7 @@ struct Version{
     static let iOS9 = (Version.SYS_VERSION_FLOAT >= 9.0 && Version.SYS_VERSION_FLOAT < 10.0)
     static let iOS10 = (Version.SYS_VERSION_FLOAT >= 10.0)
 }
-public class MoMoPayment: NSObject {
+class MoMoPayment: NSObject {
     class var sharedInstance:MoMoPayment {
         return _sharedInstance
     }
@@ -32,7 +32,7 @@ public class MoMoPayment: NSObject {
         print("<MoMoPay> initializing successful - Your merchantcode \(merchantCode)")
     }
     
-    public static func handleOpenUrl(url: URL, sourceApp: String) {
+    open func handleOpenUrl(url: URL, sourceApp: String) {
         //let sourceURI = url.absoluteString! as String
         let sourceURI = url.absoluteString;
         let response = getDictionaryFromUrlQuery(query: sourceURI)
@@ -65,14 +65,14 @@ public class MoMoPayment: NSObject {
         }
     }
     
-    public static func getQueryStringParameter(url: String?, param: String) -> String? {
+    func getQueryStringParameter(url: String?, param: String) -> String? {
         if let url = url, let urlComponents = URLComponents(string: url), let queryItems = (urlComponents.queryItems) {
             return queryItems.filter({ (item) in item.name == param }).first?.value ?? "NIL"
         }
         return "NIL"
     }
     
-    public static func getDictionaryFromUrlQuery(query: String) -> (NSDictionary) {
+    open func getDictionaryFromUrlQuery(query: String) -> (NSDictionary) {
         let info : NSMutableDictionary = NSMutableDictionary()
         //let openUrl:URL = URL(string:query)!
         let momoappversion:String = getQueryStringParameter(url: query,param: "momoappversion")!
@@ -106,20 +106,20 @@ public class MoMoPayment: NSObject {
         return info
     }
     
-    public static func createPaymentInformation(info: NSMutableDictionary) {
+    open func createPaymentInformation(info: NSMutableDictionary) {
         paymentInfo = info
     }
     
-//    @objc open func addMoMoPayCustomButton(button: UIButton, forControlEvents controlEvents: UIControlEvents, toView parrentView: UIView) -> UIButton {
-//        
-//        button.addTarget(self, action: #selector(self.requestToken), for: .touchUpInside)
-//        
-//        parrentView.addSubview(button)
-//        return button
-//    }
+    @objc open func addMoMoPayCustomButton(button: UIButton, forControlEvents controlEvents: UIControlEvents, toView parrentView: UIView) -> UIButton {
+        
+        button.addTarget(self, action: #selector(self.requestToken), for: .touchUpInside)
+        
+        parrentView.addSubview(button)
+        return button
+    }
     
     
-    public static func requestToken() {
+    @objc open func requestToken() {
 
         if (paymentInfo as NSMutableDictionary?) == nil {
             print("<MoMoPay> Payment pakageApp should not be null.")

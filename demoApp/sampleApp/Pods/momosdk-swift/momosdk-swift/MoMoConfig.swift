@@ -43,7 +43,7 @@ let MOMO_TOKEN_RESPONSE_LOGIN_REQUIRE = "2"
 let MOMO_TOKEN_RESPONSE_NO_WALLET = "3"
 let MOMO_TOKEN_RESPONSE_USER_CANCELED = "4"
 
-public class MoMoConfig {
+class MoMoConfig {
     enum MOMO_ENVIRONEMENT: Int {
         case DEFAULT = 1, DEVELOPMENT = 2, PRODUCTION = 3
     }
